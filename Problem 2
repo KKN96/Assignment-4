@@ -1,0 +1,8 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import time
+timea=time.time()
+x=np.random.random(10000)
+timeb=time.time()-timea
+plt.hist(x, range=(0.0, 1.0), density=True)
+print(timeb)

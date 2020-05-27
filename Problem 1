@@ -1,0 +1,17 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import time
+timea=time.time()
+a = 1664525
+c = 1013904223
+m = 4294967296
+n=10000
+x=np.ones(n)
+x[0] = 1
+results = []
+for i in range(n-1):
+     x[i+1] = (a*x[i]+c)%m
+     results.append(x[i]/m)  
+timeb=time.time()-timea        
+plt.hist(results, range=(0.0, 1), density=True)
+print(timeb)

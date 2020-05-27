@@ -1,0 +1,14 @@
+import numpy as np
+import matplotlib.pyplot as plt
+x_1=np.random.random(10000)
+x_2=np.random.random(10000)
+y1 = np.sqrt(-2*np.log(x_1)) * np.cos(2*np.pi*x_2)
+y2 = np.sqrt(-2*np.log(x_1)) * np.sin(2*np.pi*x_2)
+plt.hist(x_1, range=(0.0, 1.0), density=True)
+fig=plt.figure()
+plt.hist(x_2, range=(0.0, 1.0), density=True)
+fig=plt.figure()
+plt.hist(y1, range=(-5.0, 5.0),color='r', density=True)
+fig=plt.figure()
+plt.hist(y2, range=(-5.0, 5.0), color='g', density=True)
+fig=plt.figure()

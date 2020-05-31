@@ -1,0 +1,15 @@
+import numpy as np
+def f(r):
+    return np.matmul(np.transpose(r),r)
+n=1000000
+r1=-1
+r2=1
+#r2-r1=2
+r=np.random.uniform(r1,r2,(n,10))
+k=0
+for i in range(n):
+    z=f(r[i])
+    if z<=1:
+        k=k+1
+V=(k/n)*2**10
+print('Volume : ',V)

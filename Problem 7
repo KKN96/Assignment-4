@@ -1,0 +1,23 @@
+import numpy as np
+import scipy
+from scipy import stats
+import matplotlib.pyplot as plt
+score=np.array([2,3,4,5,6,7,8,9,10,11,12])
+probabilities=np.array([1/36,1/18,1/12,1/9,5/36,1/6,5/36,1/9,1/12,1/18,1/36])
+Y1 = np.array([4,10,10,13,20,18,18,11,13,14,13])
+Y2 = np.array([3,7,11,15,19,24,21,17,13,9,5])
+n=11
+np1=probs*np.sum(Y1)
+np2=probs*np.sum(Y2)
+V1=0
+V2=0
+for i in range(n):
+    V1=V1+((Y1[i]-np1[i])**2)/(np1[i])
+P1=1.0-scipy.stats.chi2.cdf(V1, n-1)  #Follwoing lecture note 
+print(V1)
+print(P1)
+for i in range(n):
+    V2=V2+((Y2[i]-np2[i])**2)/(np2[i])
+P2=1.0-scipy.stats.chi2.cdf(V2, n-1)
+print(V2)
+print(P2)

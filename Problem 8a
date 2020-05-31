@@ -1,0 +1,13 @@
+import numpy as np
+def f(x,y):
+    return x**2+y**2
+n=1000000
+x=np.random.uniform(-1,1,n)
+y=np.random.uniform(-1,1,n)
+k=0
+for i in range(n):
+    z=f(x[i],y[i])
+    if z<=1:
+        k=k+1
+A=(k/n)*4 #4 is the area of x,y plane
+print('Area: ',A)

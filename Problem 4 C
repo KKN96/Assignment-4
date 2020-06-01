@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<math.h>
 #include<time.h>
-int num=1000;
+int num=2000;
 int main()
 {
 	srand(time(0));
@@ -13,7 +13,7 @@ int main()
 	file=fopen("KK.txt","w");
 	for(i=0;i<num;i++)
 	{n=rand()/((float)RAND_MAX+1);
-	numbers[i]=-2*log(1-n);
+	numbers[i]=-(0.5)*log(1-n);
 	fprintf(file,"%f\n",numbers[i]);
 	}
 	fclose(file);

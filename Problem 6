@@ -2,17 +2,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 def f(x):
     return np.sqrt(2/np.pi)*np.exp(-x**2/2)
-x=np.random.rand(100000)*2
-y=np.random.rand(100000)
-g=np.zeros(1, dtype=float)
-pdf=np.sqrt(2/np.pi)*np.exp(-x**2/2)
+n=100000
+x=np.random.rand(n)*10
+y=np.random.rand(n)*2
+y_good=np.zeros(1, dtype=float)
+true_distribution=np.sqrt(2/np.pi)*np.exp(-x**2/2)
 for i in range(n):
-    temp=f(x[i])
-    if(y[i]<=temp):
+    if(y[i]<=f(x[i])):
         if(i==0):
-            g[i]=x[i]
+            y_good[i]=x[i]
         else:
-            g=np.append(good,x[i])
-b=10            
-plt.hist(g,b,density='true', histtype='bar', ec='white')
-plt.plot(x[np.argsort(x)],pdf[np.argsort(x)], 'g--')
+            y_good=np.append(y_good, x[i])
+b=20
+plt.hist(y_good,b,density='true', histtype='bar', ec='black')
+plt.plot(x[np.argsort(x)],true_distribution[np.argsort(x)], color='green')

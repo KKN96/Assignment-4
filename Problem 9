@@ -1,0 +1,29 @@
+import numpy as np
+import matplotlib.pyplot as plt
+def f(x):
+    if(x>3 and x<7):
+        return 1.0
+    else:
+        return  0
+n=500
+theta=5.0
+num=[]
+markov_chain=[]
+N=np.zeros(n)
+for i in range(n):
+    theta_p=theta+np.random.standard_normal()
+    z=np.random.rand()
+    markov_chain.append(theta_p)
+    N[i]=i
+    if (f(theta_p)/f(theta)) > z :
+        theta=theta_p
+    num.append(theta)
+b=20
+Num=np.array(num)
+true=np.ones(Num.size)*0.25
+plt.hist(Num,b,histtype='bar',ec='black', density='true')
+plt.plot(Num,true)
+fig=plt.figure()
+plt.scatter(N,markov_chain)
+plt.plot(Num,color='green')
+fig=plt.figure()

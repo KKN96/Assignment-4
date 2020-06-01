@@ -1,1 +1,21 @@
-
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#include<time.h>
+int num=1000;
+int main()
+{
+	srand(time(0));
+	float numbers[num],n;
+	int i;
+	srand(time(0));
+	FILE *file;
+	file=fopen("KK.txt","w");
+	for(i=0;i<num;i++)
+	{n=rand()/((float)RAND_MAX+1);
+	numbers[i]=-2*log(1-n);
+	fprintf(file,"%f\n",numbers[i]);
+	}
+	fclose(file);
+	return 0;
+}

@@ -21,7 +21,7 @@ for i in range(n):
 b=20
 Num=np.array(num)
 true=np.ones(Num.size)*0.25
-plt.hist(Num,b,histtype='bar',ec='black', density='true')
+plt.hist(Num,b,histtype='bar',ec='black', density=True)
 plt.plot(Num,true)
 fig=plt.figure()
 plt.scatter(N,markov_chain)

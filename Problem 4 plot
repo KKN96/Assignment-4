@@ -1,9 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
-file=open('KK.txt','r')
+file=open('KK 2.txt','r')
 sampled_data=np.loadtxt(file)
-b=20
-plt.hist(sampled_data, b, histtype='bar', ec='black')
+b=8
+plt.hist(sampled_data, b)
+binheights=plt.hist(sampled_data,b)[0]
 xarr=np.linspace(0,np.amax(sampled_data),b)
-true=0.5*np.exp(-0.5*xarr)*2*np.amax(binheights)
-plt.plot(true, color='blue')
+true=2*np.exp(-2*xarr)*2*np.amax(binheights)
+plt.plot(true, color='red')

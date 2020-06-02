@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 file=open('KK 2.txt','r')
 sampled_data=np.loadtxt(file)
 b=8
-plt.hist(sampled_data, b)
+plt.hist(sampled_data, b, density=True)
 binheights=plt.hist(sampled_data,b)[0]
 xarr=np.linspace(0,np.amax(sampled_data),b)
-true=2*np.exp(-2*xarr)*2*np.amax(binheights)
+true=2*np.exp(-2*xarr)*0.5*np.amax(binheights)
 plt.plot(true, color='red')

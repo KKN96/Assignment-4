@@ -14,5 +14,5 @@ for i in range(n):
         else:
             y_good=np.append(y_good, x[i])
 b=20
-plt.hist(y_good,b,density='true', histtype='bar', ec='black')
+plt.hist(y_good,b,density=True, histtype='bar', ec='black')
 plt.plot(x[np.argsort(x)],true_distribution[np.argsort(x)], color='green')
